@@ -1,0 +1,57 @@
+@use "../../styles/global" as *;
+@use "../../styles/colors" as *;
+@use "../../styles/typography" as *;
+
+.navbar {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: $pistachio;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .title {
+        font-family: nregular;
+        font-size: 40px;
+        color: $black;
+        font-weight: 400;
+    }
+
+    .cta {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 11px 22px;
+        border: 2px solid $forest-green;
+        border-radius: 20px;
+        height: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        color: $forest-green;
+        font-size: 14px;
+        font-weight: 500;
+
+        .icon {
+            margin-left: 8px;
+            font-size: 14px;
+        }
+        
+        &:hover {
+            background: $forest-green;
+            color: $white;
+        }
+        
+        &:hover .icon {
+            color: $white;
+        }
+ 
+    }
+
+}

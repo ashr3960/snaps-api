@@ -1,0 +1,72 @@
+@font-face {
+  font-family: nlight;
+  src: url(/assets/fonts/Newsreader-Light.woff);
+}
+@font-face {
+  font-family: nlightitalic;
+  src: url(/assets/fonts/Newsreader-LightItalic.woff);
+}
+@font-face {
+  font-family: nregular;
+  src: url(/assets/fonts/Newsreader-Regular.woff);
+}
+@font-face {
+  font-family: olight;
+  src: url(/assets/fonts/Outfit-Light.woff);
+}
+@font-face {
+  font-family: omedium;
+  src: url(/assets/fonts/Outfit-Medium.woff);
+}
+body {
+  margin: 0;
+  padding: 0 20px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #EFFAF7;
+}
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.navbar .title {
+  font-family: nregular;
+  font-size: 40px;
+  color: #0C1E1A;
+  font-weight: 400;
+}
+.navbar .cta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 11px 22px;
+  border: 2px solid #1E6655;
+  border-radius: 20px;
+  height: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  color: #1E6655;
+  font-size: 14px;
+  font-weight: 500;
+}
+.navbar .cta .icon {
+  margin-left: 8px;
+  font-size: 14px;
+}
+.navbar .cta:hover {
+  background: #1E6655;
+  color: #FFFFFF;
+}
+.navbar .cta:hover .icon {
+  color: #FFFFFF;
+}
+
+/*# sourceMappingURL=navbar.css.map */

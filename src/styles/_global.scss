@@ -1,0 +1,21 @@
+@use 'colors' as *;
+@use 'typography' as *;
+
+body {
+  margin: 0;
+  padding: 0 20px; 
+}
+
+
+@mixin tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+  
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+  
