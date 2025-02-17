@@ -1,0 +1,91 @@
+@font-face {
+  font-family: nlight;
+  src: url(/assets/fonts/Newsreader-Light.woff);
+}
+@font-face {
+  font-family: nlightitalic;
+  src: url(/assets/fonts/Newsreader-LightItalic.woff);
+}
+@font-face {
+  font-family: nregular;
+  src: url(/assets/fonts/Newsreader-Regular.woff);
+}
+@font-face {
+  font-family: olight;
+  src: url(/assets/fonts/Outfit-Light.woff);
+}
+@font-face {
+  font-family: omedium;
+  src: url(/assets/fonts/Outfit-Medium.woff);
+}
+body {
+  margin: 0;
+  padding: 0 20px;
+}
+
+.footer {
+  background-color: #EFFAF7;
+  padding: 40px 0;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer .footer-left .logo {
+  font-family: nregular;
+  font-size: 40px;
+  color: #0C1E1A;
+  font-weight: 400;
+}
+.footer .footer-links {
+  display: flex;
+  gap: 50px;
+}
+.footer .footer-links .footer-column {
+  display: flex;
+  flex-direction: column;
+}
+.footer .footer-links .footer-column a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-size: 16px;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+.footer .footer-links .footer-column a:hover {
+  color: #4a90e2;
+}
+.footer .footer-social {
+  display: flex;
+  gap: 15px;
+}
+.footer .footer-social a {
+  font-size: 20px;
+  color: #1a1a1a;
+  transition: color 0.3s ease;
+}
+.footer .footer-social a:hover {
+  color: #4a90e2;
+}
+.footer .footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #888;
+}
+.footer .footer-bottom a {
+  text-decoration: none;
+  color: #888;
+  margin: 0 5px;
+  transition: color 0.3s ease;
+}
+.footer .footer-bottom a:hover {
+  color: #4a90e2;
+}
+
+/*# sourceMappingURL=footer.css.map */

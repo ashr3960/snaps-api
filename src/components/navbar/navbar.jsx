@@ -3,18 +3,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import "./navbar.css";
 
-const Navbar = () => {
-  return (
-    <nav className="navbar">
-        <div className="container">
-            <h1 className="title">Snaps</h1>
-            <div className="cta">
-                <p className="cta-title">Filters</p>
-                <FontAwesomeIcon icon={faBars} className="icon" />
+function Navbar () {
+    return (
+        <nav className="navbar">
+            <div className="container">
+                <h1 className="title">Snaps</h1>
+                <div className="cta">
+                    <p className="cta-title">Filters</p>
+                    <FontAwesomeIcon icon={faBars} className="icon" />
+                </div>
             </div>
-        </div>
-    </nav>
-  );
+        </nav>
+    );
 };
 
 export default Navbar;
