@@ -7,12 +7,12 @@
     width: 100%;
     bottom: 0;
     left: 0;
-    position: fixed;
+    position: relative;
     height: 300px;
     margin-top: 40px;
 
     @include mobile {
-        height: 400px;
+        height: 360px;
     }
     
     .container {

@@ -1,0 +1,66 @@
+@font-face {
+  font-family: nlight;
+  src: url(/assets/fonts/Newsreader-Light.woff);
+}
+@font-face {
+  font-family: nlightitalic;
+  src: url(/assets/fonts/Newsreader-LightItalic.woff);
+}
+@font-face {
+  font-family: nregular;
+  src: url(/assets/fonts/Newsreader-Regular.woff);
+}
+@font-face {
+  font-family: olight;
+  src: url(/assets/fonts/Outfit-Light.woff);
+}
+@font-face {
+  font-family: omedium;
+  src: url(/assets/fonts/Outfit-Medium.woff);
+}
+body {
+  margin: 0;
+  padding: 0 20px;
+}
+
+.card {
+  background-color: #B2AC88;
+  border: 1px solid #2E8B57;
+  border-radius: 12px;
+  padding: 16px;
+  max-width: 350px;
+  transition: all 0.3s ease-in-out;
+}
+.card .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+.card__image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.card__name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+.card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+.card__tag {
+  background-color: #2E8B57;
+  color: white;
+  font-size: 0.875rem;
+  padding: 4px 8px;
+  border-radius: 12px;
+  text-transform: capitalize;
+}
+
+/*# sourceMappingURL=card.css.map */
