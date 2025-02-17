@@ -36,6 +36,13 @@ function Footer() {
 
             </div>
 
+            <div className="footer-social--hidden">
+                <a href="#"><img src={FacebookIcon} alt="Facebook" className="social-icon" /></a>
+                <a href="#"><img src={TwitterIcon} alt="Twitter" className="social-icon" /></a>
+                <a href="#"><img src={InstagramIcon} alt="Instagram" className="social-icon" /></a>
+                <a href="#"><img src={PinterestIcon} alt="Pinterest" className="social-icon" /></a>
+            </div>
+
             <div className="footer-bottom">
                 <p>© 2024 Snaps · <a href="#">Terms</a> <a href="#">Privacy</a> <a href="#">Cookies</a></p>
             </div>

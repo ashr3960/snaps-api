@@ -1,7 +1,6 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
 import "./navbar.css";
+import FilterIcon from "../../assets/images/Filter.svg";
 
 function Navbar () {
     return (
@@ -10,7 +9,7 @@ function Navbar () {
                 <h1 className="title">Snaps</h1>
                 <div className="cta">
                     <p className="cta-title">Filters</p>
-                    <FontAwesomeIcon icon={faBars} className="icon" />
+                    <a href="#"><img src={FilterIcon} alt="Filter" className="icon" /></a>
                 </div>
             </div>
         </nav>
