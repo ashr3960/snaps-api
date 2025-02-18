@@ -3,16 +3,16 @@
 @use "../../styles/typography" as *;
 
 .navbar {
-    position: relative; 
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
     background: $pistachio;
+    transition: transform 0.3s ease-in-out;
 
     .container {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        transition: margin-right 0.3s ease-in-out;
     }
 
     .title {
@@ -41,16 +41,70 @@
             margin-left: 8px;
             font-size: 14px;
         }
-        
-        &:hover {
+
+        &:hover,
+        &.active {
             background: $forest-green;
             color: $white;
         }
-        
-        &:hover .icon {
-            color: $white;
-        }
- 
     }
 
+    .modal {
+        position: absolute;
+        top: 130px; 
+        right: -8px;
+        width: 30%;
+        height: calc(800vh - 200px);      
+        background: $sage;
+        display: flex;
+        flex-direction: column;
+    }
+    
+
+    .modal-content {
+        position: sticky;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .modal-title {
+        font-family: omedium;
+        font-size: 24px;
+        color: $black;
+        font-weight: 300;
+        margin-top: 16px;
+        margin-bottom: 14px;
+        padding: 24px;
+    }
+
+    .tags-container {
+        position: sticky;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .tag-item {
+        display: flex;
+        align-items: center;
+        padding: 8px 12px;
+        background-color: $white;
+        border: 1.5px solid $forest-green;
+        border-radius: 8px;
+        cursor: pointer;
+        color: $forest-green;
+        font-size: 12px;
+        font-weight: 400;
+        font-family: omedium;
+        transition: all 0.3s ease-in-out;
+
+        &:hover,
+        &.selected {
+            background: $forest-green;
+            color: $white;
+        }
+    }
 }

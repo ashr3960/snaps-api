@@ -25,15 +25,15 @@ body {
 
 .navbar {
   position: relative;
-  top: 0;
-  left: 0;
   width: 100%;
   background: #EFFAF7;
+  transition: transform 0.3s ease-in-out;
 }
 .navbar .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: margin-right 0.3s ease-in-out;
 }
 .navbar .title {
   font-family: nregular;
@@ -60,11 +60,59 @@ body {
   margin-left: 8px;
   font-size: 14px;
 }
-.navbar .cta:hover {
+.navbar .cta:hover, .navbar .cta.active {
   background: #1E6655;
   color: #FFFFFF;
 }
-.navbar .cta:hover .icon {
+.navbar .modal {
+  position: absolute;
+  top: 130px;
+  right: -8px;
+  width: 30%;
+  height: calc(800vh - 200px);
+  background: #E4EFEC;
+  display: flex;
+  flex-direction: column;
+}
+.navbar .modal-content {
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.navbar .modal-title {
+  font-family: omedium;
+  font-size: 24px;
+  color: #0C1E1A;
+  font-weight: 300;
+  margin-top: 16px;
+  margin-bottom: 14px;
+  padding: 24px;
+}
+.navbar .tags-container {
+  position: sticky;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 20px;
+}
+.navbar .tag-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: #FFFFFF;
+  border: 1.5px solid #1E6655;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #1E6655;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: omedium;
+  transition: all 0.3s ease-in-out;
+}
+.navbar .tag-item:hover, .navbar .tag-item.selected {
+  background: #1E6655;
   color: #FFFFFF;
 }
 
