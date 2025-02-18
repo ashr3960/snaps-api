@@ -28,6 +28,16 @@ function App() {
       <Navbar onFilterChange={handleFilterChange} setIsModalOpen={setIsModalOpen} />
 
       <div className={`web-content ${isModalOpen ? "shifted" : ""}`}>
+
+        <p className="hero-title">Our mission:</p>
+        <div className="hero-description">
+          <span>Provide photographers a space</span>
+          <span>to share photos of the</span>
+          <span>neighborhoods they cherish,</span>
+          <span>expressed in their unique style.</span>
+        </div>
+
+
         <div className="card-container">
           {filteredPhotos.map((photo) => (
             <Card 

@@ -28,6 +28,7 @@ body {
   width: 100%;
   background: #EFFAF7;
   transition: transform 0.3s ease-in-out;
+  margin-bottom: 80px;
 }
 .navbar .container {
   display: flex;
@@ -66,19 +67,23 @@ body {
 }
 .navbar .modal {
   position: absolute;
-  top: 130px;
   right: -8px;
   width: 30%;
-  height: calc(800vh - 200px);
+  height: auto;
   background: #E4EFEC;
   display: flex;
   flex-direction: column;
 }
+@media (max-width: 1024px) {
+  .navbar .modal {
+    position: relative;
+    right: 0;
+    width: 100%;
+  }
+}
 .navbar .modal-content {
-  position: sticky;
   display: flex;
   flex-direction: column;
-  height: 100vh;
 }
 .navbar .modal-title {
   font-family: omedium;
