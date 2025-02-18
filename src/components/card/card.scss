@@ -3,47 +3,56 @@
 @use "../../styles/typography" as *;
 
 .card {
-    background-color: #B2AC88; // Sage
-    border: 1px solid #2E8B57; // Sea Green
-    border-radius: 12px;
-    padding: 16px;
-    max-width: 350px;
-    transition: all 0.3s ease-in-out;
-    
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 8px; // Spacing between elements
-    }
+  background-color: $sage;
+  border: 1px solid $sea-green; 
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
   
-    &__image {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-  
-    &__name {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #333;
-    }
-  
-    &__tags {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px; // Space between tags
-    }
-  
-    &__tag {
-      background-color: #2E8B57; // Sea Green
-      color: white;
-      font-size: 0.875rem;
-      padding: 4px 8px;
-      border-radius: 12px;
-      text-transform: capitalize;
-    }
+
+  .image-container {
+    position: relative; 
+    width: 100%;
+    overflow: hidden
   }
-  
+
+  &__image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+  }
+
+  &__name {
+    border: 1px solid $sea-green;
+    font-size: 14px;
+    font-weight: 400;
+    color: $black;
+    font-family: omedium;
+    position: absolute;
+    bottom: -10px;
+    right: -2px;
+    background-color: $sage;
+    padding: 6px 10px;
+    border-radius: 12px 0 0 0;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 8px;
+  }
+
+  &__tag {
+    font-family: omedium;
+    font-weight: 400;
+    border: 1px solid $sea-green;
+    background-color: $white;
+    color: $black;
+    font-size: 14px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    text-transform: capitalize;
+  }
+}

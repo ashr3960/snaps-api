@@ -13,8 +13,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-left: 20px;
-        padding-right: 20px;
     }
 
     .title {
@@ -37,6 +35,7 @@
         color: $forest-green;
         font-size: 14px;
         font-weight: 500;
+        font-family: omedium;
 
         .icon {
             margin-left: 8px;

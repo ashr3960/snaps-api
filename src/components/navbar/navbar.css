@@ -34,8 +34,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 .navbar .title {
   font-family: nregular;
@@ -56,6 +54,7 @@ body {
   color: #1E6655;
   font-size: 14px;
   font-weight: 500;
+  font-family: omedium;
 }
 .navbar .cta .icon {
   margin-left: 8px;
