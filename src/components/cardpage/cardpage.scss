@@ -1,0 +1,77 @@
+@use "../../styles/global" as *;
+@use "../../styles/colors" as *;
+@use "../../styles/typography" as *;
+
+.card-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  background-color: $pistachio;
+}
+
+.card {
+    max-width: 600px;
+    width: 100%;
+    background-color: $sage;
+    border: 2px solid $sea-green;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+
+    &__image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .card__tags {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        padding: 12px 8px;
+        justify-content: flex-start; 
+
+        &__indi {
+            font-family: omedium;
+            font-weight: 400;
+            border: 1px solid $sea-green;
+            background-color: $white;
+            color: $black;
+            font-size: 14px;
+            padding: 4px 8px;
+            border-radius: 12px;
+            text-transform: capitalize;
+          }
+    }
+    
+    .card__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 8px;
+    }
+    
+    .card__likes {
+        font-family: omedium;
+        font-weight: 400;
+
+        img {
+            padding-right: 4px;
+        }
+    }
+    
+    .card__names {
+        flex-grow: 1;
+        text-align: center; 
+        font-family: omedium;
+        font-weight: 400;
+    }
+    
+    .card__times {
+        text-align: right;
+        font-family: omedium;
+        font-weight: 400;
+    }
+}    

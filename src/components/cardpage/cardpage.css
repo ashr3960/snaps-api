@@ -23,22 +23,22 @@ body {
   padding: 0 20px;
 }
 
-.card__link {
-  text-decoration: none;
-  color: inherit;
+.card-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  background-color: #EFFAF7;
 }
 
 .card {
+  max-width: 600px;
+  width: 100%;
   background-color: #E4EFEC;
-  border: 1px solid #B7CEC9;
+  border: 2px solid #B7CEC9;
   border-radius: 12px;
   transition: all 0.3s ease-in-out;
-  width: 100%;
-}
-.card .image-container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
 }
 .card__image {
   width: 100%;
@@ -46,26 +46,14 @@ body {
   object-fit: cover;
   border-radius: 12px 12px 0 0;
 }
-.card__name {
-  border: 1px solid #B7CEC9;
-  font-size: 14px;
-  font-weight: 400;
-  color: #0C1E1A;
-  font-family: omedium;
-  position: absolute;
-  bottom: -10px;
-  right: -2px;
-  background-color: #E4EFEC;
-  padding: 6px 10px;
-  border-radius: 12px 0 0 0;
-}
-.card__tags {
+.card .card__tags {
   display: flex;
-  flex-wrap: wrap;
   gap: 8px;
+  flex-wrap: wrap;
   padding: 12px 8px;
+  justify-content: flex-start;
 }
-.card__tag {
+.card .card__tags__indi {
   font-family: omedium;
   font-weight: 400;
   border: 1px solid #B7CEC9;
@@ -76,5 +64,29 @@ body {
   border-radius: 12px;
   text-transform: capitalize;
 }
+.card .card__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 8px;
+}
+.card .card__likes {
+  font-family: omedium;
+  font-weight: 400;
+}
+.card .card__likes img {
+  padding-right: 4px;
+}
+.card .card__names {
+  flex-grow: 1;
+  text-align: center;
+  font-family: omedium;
+  font-weight: 400;
+}
+.card .card__times {
+  text-align: right;
+  font-family: omedium;
+  font-weight: 400;
+}
 
-/*# sourceMappingURL=card.css.map */
+/*# sourceMappingURL=cardpage.css.map */

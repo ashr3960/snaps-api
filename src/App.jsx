@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import CardPage from "./components/cardpage/cardpage";
 import axios from "axios";
 import Navbar from "./components/navbar/navbar";
 import Footer from "./components/footer/footer";
@@ -19,11 +21,8 @@ function App() {
         const response = await axios.get(`${API_URL}/photos?api_key=${API_KEY}`);
         console.log(response.data);
         setPhotos(response.data);
-        setLoading(false);
       } catch (err) {
         console.error("Error fetching photos:", err);
-        setError("Failed to load photos");
-        setLoading(false);
       }
     };
   
@@ -42,34 +41,41 @@ function App() {
     : photos;
 
   return (
-    <div> 
+    <Router> 
       <Navbar onFilterChange={handleFilterChange} setIsModalOpen={setIsModalOpen} />
 
-      <div className={`web-content ${isModalOpen ? "shifted" : ""}`}>
-        <p className="hero-title">Our mission:</p>
-        <div className="hero-description">
-          <span>Provide photographers a space</span>
-          <span>to share photos of the</span>
-          <span>neighborhoods they cherish,</span>
-          <span>expressed in their unique style.</span>
+      <Routes>
+        <Route path="/" element={
+          <div className={`web-content ${isModalOpen ? "shifted" : ""}`}>
+          <p className="hero-title">Our mission:</p>
+          <div className="hero-description">
+            <span>Provide photographers a space</span>
+            <span>to share photos of the</span>
+            <span>neighborhoods they cherish,</span>
+            <span>expressed in their unique style.</span>
+          </div>
+  
+          <div className="card-container">
+            {filteredPhotos.map((photo) => (
+              <Card 
+                key={photo.id} 
+                id={photo.id} 
+                photo={photo.photo} 
+                photographer={photo.photographer} 
+                tags={photo.tags} 
+              />
+            ))}
+          </div>
         </div>
+        }/>
 
+        <Route path="/card/:id" element={<CardPage photos={photos} />} />
 
-        <div className="card-container">
-          {filteredPhotos.map((photo) => (
-            <Card 
-              key={photo.id} 
-              photo={photo.photo} 
-              photographer={photo.photographer} 
-              tags={photo.tags} 
-            />
-          ))}
-        </div>
-      </div>
+      </Routes>
       
 
       <Footer />
-    </div>
+    </Router>
   );
 }
 

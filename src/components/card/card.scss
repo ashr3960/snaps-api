@@ -2,6 +2,11 @@
 @use "../../styles/colors" as *;
 @use "../../styles/typography" as *;
 
+.card__link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .card {
   background-color: $sage;
   border: 1px solid $sea-green; 
