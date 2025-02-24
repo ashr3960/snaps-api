@@ -4,6 +4,8 @@
 
 .card-page {
   display: flex;
+  gap: 34px;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
@@ -74,4 +76,66 @@
         font-family: omedium;
         font-weight: 400;
     }
+    
 }    
+
+
+.error {
+    border: 2px solid red !important;
+    background-color: $white; 
+}
+
+
+.commentsection {
+    .comment-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background-color: $pistachio; 
+        padding: 20px;
+        border-radius: 8px;
+    }
+    
+    .comment-form label {
+        font-family: omedium;
+        font-weight: 400;
+        margin-bottom: 6px;
+    }
+    
+    .comment-form input,
+    .comment-form textarea {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid $sea-green; 
+        border-radius: 8px;
+        font-family: omedium;
+        font-weight: 400;
+        background-color: $white;
+    }
+    
+    .comment-form textarea {
+        height: 100px; 
+        resize: none; 
+    }
+    
+    .comment-form button {
+        background-color: $forest-green;
+        color: $white;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        align-self: flex-end; 
+    }
+    
+    .comment-form button:hover {
+        background-color: $sea-green;
+    }
+    
+}
+
+.comments {
+    font-family: omedium;
+    font-weight: 400;
+}

@@ -25,6 +25,8 @@ body {
 
 .card-page {
   display: flex;
+  gap: 34px;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
@@ -85,6 +87,57 @@ body {
 }
 .card .card__times {
   text-align: right;
+  font-family: omedium;
+  font-weight: 400;
+}
+
+.error {
+  border: 2px solid red !important;
+  background-color: #FFFFFF;
+}
+
+.commentsection .comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #EFFAF7;
+  padding: 20px;
+  border-radius: 8px;
+}
+.commentsection .comment-form label {
+  font-family: omedium;
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+.commentsection .comment-form input,
+.commentsection .comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #B7CEC9;
+  border-radius: 8px;
+  font-family: omedium;
+  font-weight: 400;
+  background-color: #FFFFFF;
+}
+.commentsection .comment-form textarea {
+  height: 100px;
+  resize: none;
+}
+.commentsection .comment-form button {
+  background-color: #1E6655;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  align-self: flex-end;
+}
+.commentsection .comment-form button:hover {
+  background-color: #B7CEC9;
+}
+
+.comments {
   font-family: omedium;
   font-weight: 400;
 }
