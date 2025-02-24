@@ -1,11 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./navbar.css";
 import FilterIcon from "../../assets/images/Filter.svg";
-import tagsData from "../../data/tags.json";
+import axios from "axios";
+
+const API_URL = "https://unit-3-project-c5faaab51857.herokuapp.com/tags";
+const API_KEY = "d5463767-a03a-4bce-aae0-bf9c42d7d708";
 
 function Navbar({ onFilterChange, setIsModalOpen }) {
     const [isModalOpen, setIsModalOpenState] = useState(false);
-    const [selectedTags, setSelectedTags] = useState([]);  
+    const [selectedTags, setSelectedTags] = useState([]); 
+    const [tags, setTags] = useState([]); 
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchTags = async () => {
+            try {
+                const response = await axios.get(`${API_URL}?api_key=${API_KEY}`);
+                setTags(response.data);
+                setLoading(false);
+            } catch (err) {
+                console.error("Error fetching tags:", err);
+                setError("Failed to load tags");
+                setLoading(false);
+            }
+        };
+
+        fetchTags();
+    }, []);
 
     const toggleModal = () => {
         const newState = !isModalOpen;
@@ -25,6 +47,14 @@ function Navbar({ onFilterChange, setIsModalOpen }) {
         }
     };
 
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>{error}</div>;
+    }
+
     return (
         <nav className={`navbar ${isModalOpen ? "modal-open" : ""}`}>
             <div className="container">
@@ -43,7 +73,7 @@ function Navbar({ onFilterChange, setIsModalOpen }) {
                     <div className="modal-content">
                         <h className="modal-title">Filters</h>
                         <div className="tags-container">
-                            {tagsData.map((tag, index) => (
+                            {tags.map((tag, index) => (
                                 <div
                                     key={index}
                                     onClick={() => handleTagClick(tag)}
