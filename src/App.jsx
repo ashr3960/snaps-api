@@ -7,7 +7,7 @@ import Footer from "./components/footer/footer";
 import Card from "./components/card/card";
 import "./App.css";  
 
-const API_URL = "https://unit-3-project-c5faaab51857.herokuapp.com";
+const API_URL = "http://localhost:8000";
 const API_KEY = "d5463767-a03a-4bce-aae0-bf9c42d7d708";
 
 function App() {
@@ -18,13 +18,12 @@ function App() {
   useEffect(() => {
     const fetchPhotos = async () => {
       try {
-        const response = await axios.get(`${API_URL}/photos?api_key=${API_KEY}`);
-        console.log(response.data);
+        const response = await axios.get(`${API_URL}/photos`);
         setPhotos(response.data);
       } catch (err) {
         console.error("Error fetching photos:", err);
       }
-    };
+    };    
   
     fetchPhotos();
   }, []);
@@ -69,7 +68,7 @@ function App() {
         </div>
         }/>
 
-        <Route path="/card/:id" element={<CardPage photos={photos} />} />
+        <Route path="/photos/:id" element={<CardPage photos={photos} />} />
 
       </Routes>
       

@@ -3,8 +3,7 @@ import "./navbar.css";
 import FilterIcon from "../../assets/images/Filter.svg";
 import axios from "axios";
 
-const API_URL = "https://unit-3-project-c5faaab51857.herokuapp.com/tags";
-const API_KEY = "d5463767-a03a-4bce-aae0-bf9c42d7d708";
+const API_URL = "http://localhost:8000";
 
 function Navbar({ onFilterChange, setIsModalOpen }) {
     const [isModalOpen, setIsModalOpenState] = useState(false);
@@ -16,7 +15,7 @@ function Navbar({ onFilterChange, setIsModalOpen }) {
     useEffect(() => {
         const fetchTags = async () => {
             try {
-                const response = await axios.get(`${API_URL}?api_key=${API_KEY}`);
+                const response = await axios.get(`${API_URL}/tags`);
                 setTags(response.data);
                 setLoading(false);
             } catch (err) {

@@ -5,8 +5,7 @@ import "./cardpage.css";
 import LikeOutline from "../../assets/images/Like_Outline.svg";
 import LikeFilled from "../../assets/images/Like_Filled.svg";
 
-const API_URL = "https://unit-3-project-c5faaab51857.herokuapp.com";
-const API_KEY = "d5463767-a03a-4bce-aae0-bf9c42d7d708";
+const API_URL = "http://localhost:8000";
 
 function CardPage() {
     const { id } = useParams();
@@ -23,24 +22,24 @@ function CardPage() {
     useEffect(() => {
         const fetchPhoto = async () => {
             try {
-                const response = await axios.get(`${API_URL}/photos/${id}?api_key=${API_KEY}`);
+                const response = await axios.get(`${API_URL}/photos/${id}`);
                 setPhotoData(response.data);
-                setLiked(response.data.liked);
-                setLoading(false);
             } catch (err) {
                 setError("Photo not found");
+            } finally {
                 setLoading(false);
             }
-        };
+        };        
 
         const fetchComments = async () => {
             try {
-                const response = await axios.get(`${API_URL}/photos/${id}/comments?api_key=${API_KEY}`);
-                setComments(response.data);
+              const response = await axios.get(`${API_URL}/photos/${id}/comments`);
+              setComments(response.data);
             } catch (err) {
-                setError("Error fetching comments");
+              setError("Error fetching comments");
             }
         };
+          
 
         fetchPhoto();
         fetchComments();
@@ -71,7 +70,7 @@ function CardPage() {
 
         try {
             const response = await axios.post(
-                `${API_URL}/photos/${id}/comments?api_key=${API_KEY}`,
+                `${API_URL}/photos/${id}/comments`,
                 { name, comment },
                 { headers: { "Content-Type": "application/json" } }
             );

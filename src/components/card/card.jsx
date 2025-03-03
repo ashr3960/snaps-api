@@ -4,7 +4,7 @@ import "./card.css";
 
 function Card({ id, photo, photographer, tags }) {
   return (
-    <Link to={`/card/${id}`} className="card__link">
+    <Link to={`/photos/${id}`} className="card__link">
       <div className="card">
         <div className="image-container">
           <img src={photo} alt="Photograph" className="card__image" />
