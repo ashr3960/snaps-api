@@ -136,6 +136,10 @@ body {
 .commentsection .comment-form button:hover {
   background-color: #B7CEC9;
 }
+.commentsection .submit {
+  color: #FFFFFF;
+  font-family: omedium;
+}
 
 .comments {
   font-family: omedium;

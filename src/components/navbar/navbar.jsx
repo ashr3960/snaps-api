@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation, Link } from "react-router-dom";
 import "./navbar.css";
 import FilterIcon from "../../assets/images/Filter.svg";
 import axios from "axios";
@@ -11,6 +12,8 @@ function Navbar({ onFilterChange, setIsModalOpen }) {
     const [tags, setTags] = useState([]); 
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    const location = useLocation();
 
     useEffect(() => {
         const fetchTags = async () => {
@@ -54,20 +57,25 @@ function Navbar({ onFilterChange, setIsModalOpen }) {
         return <div>{error}</div>;
     }
 
+    const isCardPage = location.pathname.includes("/photos/");
+
     return (
         <nav className={`navbar ${isModalOpen ? "modal-open" : ""}`}>
             <div className="container">
                 <h1 className="title">Snaps</h1>
-                <div
-                    className={`cta ${isModalOpen ? "active" : ""}`}
-                    onClick={toggleModal}
-                >
-                    <p className="cta-title">Filters</p>
-                    <img src={FilterIcon} alt="Filter" className="icon" />
+                <div className={`cta ${isModalOpen ? "active" : ""}`} onClick={toggleModal}>
+                    {!isCardPage ? (
+                        <>
+                            <p className="cta-title">Filters</p>
+                            <img src={FilterIcon} alt="Filter" className="icon" />
+                        </>
+                    ) : (
+                        <Link to="/" className="home-link">Home</Link>
+                    )}
                 </div>
             </div>
 
-            {isModalOpen && (
+            {isModalOpen && !isCardPage && (
                 <div className="modal">
                     <div className="modal-content">
                         <h className="modal-title">Filters</h>

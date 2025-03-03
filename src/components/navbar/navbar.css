@@ -120,5 +120,16 @@ body {
   background: #1E6655;
   color: #FFFFFF;
 }
+.navbar .home-link {
+  text-decoration: none;
+  color: #1E6655;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: omedium;
+}
+.navbar .home-link:hover, .navbar .home-link.active {
+  background: #1E6655;
+  color: #FFFFFF;
+}
 
 /*# sourceMappingURL=navbar.css.map */
